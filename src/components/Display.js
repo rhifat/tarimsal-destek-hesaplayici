@@ -49,7 +49,7 @@ class Display extends Component {
 
   render() {
     return (
-      <div>
+      <div className="flex">
         <DisplayChild func={this.percentageAPR()} text="interest rate" />
         <DisplayChild
           func={this.calculateMonthlyRepayment()}
