@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from "react";
+import React, { Component } from "react";
 import PropTypes from "prop-types";
 import DisplayChild from "./DisplayChild";
 
@@ -18,7 +18,7 @@ class Display extends Component {
   }
 
   calculateAPR = () => {
-    let { amount } = this.props;
+    const { amount } = this.props;
 
     if (1000 < amount && amount < 5000) {
       this.setState({ APR: 0.05 });
@@ -35,10 +35,11 @@ class Display extends Component {
   };
 
   calculateMonthlyRepayment = () => {
-    let { amount, years } = this.props;
-    let decimalFormat = this.state.APR + 1;
-    let totalOwed = decimalFormat * amount;
-    let monthlyRepayment = totalOwed / (years * 12);
+    const { amount, years } = this.props;
+
+    const decimalFormat = this.state.APR + 1;
+    const totalOwed = decimalFormat * amount;
+    const monthlyRepayment = totalOwed / (years * 12);
 
     return <p>£{Math.round(monthlyRepayment)}</p>;
   };

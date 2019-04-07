@@ -19,7 +19,7 @@ class Calculator extends Component {
   };
 
   render() {
-    let { amountValue, yearsValue } = this.state;
+    const { amountValue, yearsValue } = this.state;
 
     return (
       <div className="App">

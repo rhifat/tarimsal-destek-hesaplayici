@@ -15,7 +15,7 @@ DisplayChild.defaultProps = {
 };
 
 DisplayChild.propTypes = {
-  func: PropTypes.func.isRequired,
+  func: PropTypes.object.isRequired,
   text: PropTypes.string.isRequired
 };
 
