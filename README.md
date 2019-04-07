@@ -1,31 +1,37 @@
-## How this app works
+## React Loan Calculator
 
-- As a user drags the sliders, their onChange handlers dynamically set the App component state with their values.
-- The Display component takes the App state values as 'year' and 'amount' props respectively and uses their values to automatically calculate both 'APR' percentages and a monthly repayment.
-- Both APR and repayments are displayed within a reusable DisplayChild component.
+> Simple react loan calculator
 
+![](https://img.shields.io/github/last-commit/GavBaros/react-tinder-cards.svg?style=flat)
+![](https://img.shields.io/github/repo-size/GavBaros/react-tinder-cards.svg?style=flat)
+![](https://img.shields.io/david/GavBaros/react-tinder-cards.svg?style=flat)
+
+Drag sliders and get an accurate loan amount.
 
 ## Preview
 
 ![](calculator.gif)
 
-## Demo 
+## Demo
 
 https://codepen.io/GavBarosee/pen/PVwMvG
-
 
 ## Installation
 
 ### Setup
 
-- Clone the repository or download the zipped folder
-- From your terminal, `cd` into the folder
-- Run the command `npm i` to install the dependencies
-- To run the application type `npm start` after installing the dependencies
+```sh
+git clone https://github.com/GavBaros/react-loan-calculator.git
+cd react-loan-calculator
+npm install
+npm start
+```
 
 ### Tests
 
-- While still in the directory from your terminal, run `npm run test` to run any default snapshot tests
+```sh
+npm run test
+```
 
 ## Documentation
 
