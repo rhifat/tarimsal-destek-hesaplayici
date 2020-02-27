@@ -4,7 +4,7 @@ import DisplayChild from "./DisplayChild";
 
 class Display extends Component {
   state = {
-    APR: 0.05
+    APR: 1
   };
 
   componentDidMount() {
@@ -20,17 +20,17 @@ class Display extends Component {
   calculateAPR = () => {
     const { amount } = this.props;
 
-    if (1000 < amount && amount < 5000) {
-      this.setState({ APR: 0.05 });
+    if (100 < amount && amount < 5000) {
+      this.setState({ APR: 1 });
     }
     if (5000 < amount && amount < 10000) {
-      this.setState({ APR: 0.1 });
+      this.setState({ APR: 1 });
     }
     if (10000 < amount && amount < 15000) {
-      this.setState({ APR: 0.15 });
+      this.setState({ APR: 1 });
     }
     if (15000 < amount && amount < 20000) {
-      this.setState({ APR: 0.2 });
+      this.setState({ APR: 1 });
     }
   };
 
@@ -38,10 +38,10 @@ class Display extends Component {
     const { amount, years } = this.props;
 
     const decimalFormat = this.state.APR + 1;
-    const totalOwed = decimalFormat * amount;
-    const monthlyRepayment = totalOwed / (years * 12);
+    const totalOwed = decimalFormat * amount * 15;
+    const monthlyRepayment = totalOwed + (years * 170) + (years * 21);
 
-    return <p>£{Math.round(monthlyRepayment)}</p>;
+    return <p>{Math.round(monthlyRepayment)} &#8378;</p>;
   };
 
   percentageAPR = () => {
@@ -51,10 +51,10 @@ class Display extends Component {
   render() {
     return (
       <div className="flex">
-        <DisplayChild func={this.percentageAPR()} text="interest rate" />
+        <DisplayChild func={this.percentageAPR()} text="Destek Oranı" />
         <DisplayChild
           func={this.calculateMonthlyRepayment()}
-          text=" monthly repayment"
+          text=" Toplam Destek Miktarı"
         />
       </div>
     );

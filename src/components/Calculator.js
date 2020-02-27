@@ -7,8 +7,8 @@ import "react-input-range/lib/css/index.css";
 
 class Calculator extends Component {
   state = {
-    amountValue: 5000,
-    yearsValue: 1
+    amountValue: 50,
+    yearsValue: 30
   };
 
   handleAmountChange = value => {
@@ -23,21 +23,21 @@ class Calculator extends Component {
 
     return (
       <div className="App">
-        <h4>I want to borrow £{amountValue}</h4>
+        <h4>İşletmemin {amountValue} adet arı kovanı var</h4>
         <InputRange
-          step={100}
-          maxValue={20000}
-          minValue={1000}
+          step={1}
+          maxValue={300}
+          minValue={0}
           value={amountValue}
           onChange={this.handleAmountChange}
         />
         <h4>
-          Over {yearsValue} year{yearsValue > 1 && "s"}
+          İşletmemde  {yearsValue} dekar fındık bahçem var.
         </h4>
         <InputRange
-          step={0.5}
-          maxValue={5}
-          minValue={1}
+          step={1}
+          maxValue={500}
+          minValue={0}
           value={yearsValue}
           onChange={this.handleYearChange}
         />
